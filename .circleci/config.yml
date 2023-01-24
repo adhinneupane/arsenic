@@ -1,18 +1,20 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.7
+  node: circleci/node@5.0.2
 
-workflows:
-  pre-deployment: 
-    jobs:
-      - node/test:
-          filters:
-            branches: 
-              only:
-                - main
-          version: '16.10'
+jobs:
+  randomnamespace:
+    executor: node/default
+    filters:
+      branches:
+        only:
+          - main
+    steps:
+      - checkout
+      - node/install-packages:
           pkg-manager: npm
       - run:
-          command: npm run build
-          name: build package
+          command: npm test
+          name: test package manager
+
