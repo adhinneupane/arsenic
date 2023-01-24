@@ -4,9 +4,9 @@ orbs:
   node: circleci/node@4.7
 
 workflows:
-  build: 
+  namespace: 
 
     jobs:
-      - node/default:
+      - node/test:
           version: '16.10'
           pkg-manager: npm
