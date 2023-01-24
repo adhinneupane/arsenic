@@ -17,6 +17,14 @@ jobs:
           command: |
             npm run lint
           name: check eslint -- type strict
+  # deployment-to-vercel:
+  #   executor: node/default
+  #   steps:
+  #     - checkout
+  #     - run: 
+  #         command: 
+
+          
 
 workflows:
   main:     
