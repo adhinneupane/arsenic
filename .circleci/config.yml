@@ -13,4 +13,6 @@ jobs:
       - run:
           command: npm test
           name: test package manager
+      - run:
+          command: docker run
 
