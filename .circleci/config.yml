@@ -11,8 +11,8 @@ jobs:
       - checkout
       - run:
           command: |
-            npm run build
-          name: run build 
+            npm install
+          name: install node modules
 
 
 
