@@ -13,6 +13,6 @@ workflows:
                 - main
           version: '16.10'
           pkg-manager: npm
-      - node/build:
-          version: '16.10'
-          pkg-manager: npm
+      - run:
+          name: build package
+          command: npm run build
