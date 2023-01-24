@@ -6,10 +6,6 @@ orbs:
 jobs:
   randomnamespace:
     executor: node/default
-    filters:
-      branches:
-        only:
-          - main
     steps:
       - checkout
       - node/install-packages:
