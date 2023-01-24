@@ -5,7 +5,7 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
-  linting:
+  pre-deployment:
     executor: node/default
     steps:
       - checkout
@@ -13,15 +13,18 @@ jobs:
           command: |
             npm install
           name: install node modules
-
-
+      - run:
+          command: |
+            npm run lint
+          name: check eslint -- type strict
 
 workflows:
-  pre-deployment:     
+  main:     
     jobs:
       - node/test:
           version: '16.10'
           pkg-manager: npm
-      - linting
+      - pre-deployment
+          
 
 
