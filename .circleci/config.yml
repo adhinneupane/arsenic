@@ -5,14 +5,9 @@ orbs:
 
 workflows:
   pre-deployment: 
-
     jobs:
       - node/test:
-          
           filters:
-            branches:
-              only:
-                - main
-
+            branches: main
               version: '16.10'
               pkg-manager: npm
