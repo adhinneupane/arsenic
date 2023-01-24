@@ -1,18 +1,13 @@
-version: 2.1
-
-orbs:
-  node: circleci/node@5.0.2
-
 jobs:
-  randomnamespace:
-    executor: node/default
+  build_and_test: # this can be any name you choose
+    executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
       - run:
-          command: npm test
-          name: test package manager
+          command: npm run test
+          name: Run tests
       - run:
-          command: docker run
-
+          command: npm run build
+          name: Build app
