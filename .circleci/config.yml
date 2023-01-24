@@ -4,9 +4,22 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 
+jobs:
+  linting:
+    executor: node/default
+    steps:
+      - run:
+          command: |
+            npm run build
+          name: run build 
+
+
+
 workflows:
   pre-deployment:     
     jobs:
-      - run:
-          command: npm run build 4
-          name: start build
+      - node/test:
+          version: '16.10'
+          pkg-manager: npm
+
+
