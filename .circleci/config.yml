@@ -8,6 +8,7 @@ jobs:
   linting:
     executor: node/default
     steps:
+      - checkout
       - run:
           command: |
             npm run build
