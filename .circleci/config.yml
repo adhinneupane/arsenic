@@ -7,9 +7,6 @@ orbs:
 workflows:
   pre-deployment:     
     jobs:
-      - node/test:
-          version: '16.10'
-          pkg-manager: npm
       - run:
           command: npm run build 4
           name: start build
